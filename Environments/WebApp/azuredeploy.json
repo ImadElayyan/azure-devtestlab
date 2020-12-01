@@ -5,14 +5,14 @@
         "mySiteName": {
             "type": "string",
             "metadata": {
-                "description": "Database administrator login name"
+                "description": "WebSiteName"
             }
         }
     },
     "variables": {
         "resourceNamePrefix": "[take(uniqueString(resourceGroup().id), 3)]",
         "hostingPlanName": "[toLower(concat(variables('resourceNamePrefix'), '-', take(uniqueString(resourceGroup().id), 6), '-sp'))]",
-        "siteName": "[parameters('mySiteName')]"
+        "siteName": "[concat(parameters('mySiteName'))]"
     },
     "resources": [
         {
