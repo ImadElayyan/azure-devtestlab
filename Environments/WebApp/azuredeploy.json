@@ -12,7 +12,7 @@
     "variables": {
         "resourceNamePrefix": "[take(uniqueString(resourceGroup().id), 3)]",
         "hostingPlanName": "[toLower(concat(variables('resourceNamePrefix'), '-', take(uniqueString(resourceGroup().id), 6), '-sp'))]",
-        "siteName": "[concat(parameters('mySiteName'))]"
+        "siteName": "PULTesting"
     },
     "resources": [
         {
