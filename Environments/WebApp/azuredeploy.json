@@ -2,11 +2,17 @@
     "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
+        "mySiteName": {
+            "type": "string",
+            "metadata": {
+                "description": "Database administrator login name"
+            }
+        }
     },
     "variables": {
         "resourceNamePrefix": "[take(uniqueString(resourceGroup().id), 3)]",
         "hostingPlanName": "[toLower(concat(variables('resourceNamePrefix'), '-', take(uniqueString(resourceGroup().id), 6), '-sp'))]",
-        "siteName": "[toLower(concat(variables('resourceNamePrefix'), '-', take(uniqueString(resourceGroup().id), 6)))]"
+        "siteName": "parameters('mySiteName')]"
     },
     "resources": [
         {
